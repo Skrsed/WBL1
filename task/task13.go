@@ -1,16 +1,17 @@
 package task
 
-type Swap struct {
-	a int
-	b string
+import (
+	"fmt"
+)
+
+// Поменять местами два числа без создания временной переменной.
+func UntemporarlySwap() {
+	a := 7
+	b := 8
+
+	a = a - b
+	b = a + b
+	a = b - a
+
+	fmt.Println(a, b)
 }
-
-// func untemporarlySwap() {
-// 	p1 := Swap{a: 1, b: "test"}
-// 	p2 := Swap{a: 2, b: "tset"}
-
-// 	pp1 := (*(*[unsafe.Sizeof(p1)]byte)(unsafe.Pointer(&p1)))[:]
-// 	pp2 := (*(*[unsafe.Sizeof(p2)]byte)(unsafe.Pointer(&p2)))[:]
-
-// 	p1 = Swap(pp1 ^ pp2)
-// }

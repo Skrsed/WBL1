@@ -34,5 +34,4 @@ func BinarySearch() {
 	}
 
 	fmt.Println(res)
-
 }

@@ -7,8 +7,15 @@ import (
 	"os"
 	"os/signal"
 	"sync"
+	"time"
 )
 
+// Реализовать постоянную запись данных в канал (главный поток).
+// Реализовать набор из N воркеров, которые читают произвольные данные из канала и выводят в stdout.
+// Необходима возможность выбора количества воркеров при старте.
+
+// Программа должна завершаться по нажатию Ctrl+C. Выбрать и обосновать
+// способ завершения работы всех воркеров.
 func ChanelDataStream(n int) {
 	ctx, cancel := context.WithCancel(context.Background())
 
@@ -45,8 +52,10 @@ func listenMainThread(chanI int, ch chan string, ctx context.Context, wg *sync.W
 		select {
 		case mes := <-ch:
 			fmt.Printf("listner %v received %s\n", chanI, mes)
+			time.Sleep(time.Second)
 		case <-ctx.Done():
 			wg.Done()
+
 			return
 		}
 	}
@@ -59,5 +68,6 @@ func randStringRunes(n int) string {
 	for i := range b {
 		b[i] = letterRunes[rand.Intn(len(letterRunes))]
 	}
+
 	return string(b)
 }

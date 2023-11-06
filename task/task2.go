@@ -5,11 +5,13 @@ import (
 	"os"
 )
 
+// Написать программу, которая конкурентно рассчитает значение квадратов чисел
+// взятых из массива (2,4,6,8,10) и выведет их квадраты в stdout.
 func Concurency1() {
 	nums := []int{2, 4, 6, 8, 10}
 	res := make([]int, 0, len(nums))
-
 	ch := make(chan int, len(nums))
+
 	for _, num := range nums {
 		go square(num, ch)
 	}

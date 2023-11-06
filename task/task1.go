@@ -63,6 +63,9 @@ func isSuccess(probability int) bool {
 	return r < probability
 }
 
+// Дана структура Human (с произвольным набором полей и методов).
+// Реализовать встраивание методов в структуре Action от родительской структуры Human
+// (аналог наследования).
 func HumanActionEmbeded() {
 	action := Action{
 		Human{

@@ -35,8 +35,16 @@ func main() {
 	case "task4":
 		n, _ := strconv.Atoi(os.Args[2])
 		task.ChanelDataStream(n)
+	case "task5":
+		n, _ := strconv.Atoi(os.Args[2])
+		task.MarcoPolo(n)
+	case "task6":
+		task.StopGoroutines()
 	case "task7":
 		task.ParallelMapWriter()
+	case "task8":
+		n, _ := strconv.Atoi(os.Args[2])
+		task.XorInt64(n)
 	case "task9":
 		task.NumsConveyor()
 	case "task10":
@@ -45,6 +53,8 @@ func main() {
 		task.UGroup()
 	case "task12":
 		task.OwnSet()
+	case "task13":
+		task.UntemporarlySwap()
 	case "task14":
 		task.CheckType()
 	case "task15":
@@ -59,6 +69,8 @@ func main() {
 		task.ReverseString()
 	case "task20":
 		task.SwapWords()
+	case "task22":
+		task.LongArithmetic()
 	case "task23":
 		task.DeleteItem()
 	case "task24":
